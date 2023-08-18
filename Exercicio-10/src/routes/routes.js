@@ -1,8 +1,8 @@
 import {createRouter, createWebHistory} from 'vue-router'
 
-import About from '../views/about/About.vue'
-import Home from '../views/home/Home.vue'
-import Cadastro from '../views/talent/newTalent.vue'
+import About from '../views/About.vue'
+import Home from '../views/Home.vue'
+import Cadastro from '../views/CadastroTalento.vue'
 
 const router = createRouter(
     {
