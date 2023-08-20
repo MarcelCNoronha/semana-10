@@ -2,7 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 
 import About from '../views/About.vue'
 import Home from '../views/Home.vue'
-import Cadastro from '../views/CadastroTalento.vue'
+import Cadastro from '../views/newTalent.vue'
 
 const router = createRouter(
     {
