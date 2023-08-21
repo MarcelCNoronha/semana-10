@@ -7,7 +7,6 @@
     </h2>
   </div>
     <cardTalent
-
     v-for="talento in listaTalentos"
     :key="talento.id"
     :nome = "talento.nome"
@@ -38,11 +37,13 @@ export default{
     };
   },
   methods: {
-    atualizarListaTalentos(novaListaTalentos) {
-      this.listaTalentos = novaListaTalentos;
-    },
   },
-};
+mounted(){
+      axios.get('http://localhost:50001/talentos')
+      .then(res => this.listaTalentos = res.data)
+      .catch(erro => console.log(erro))
+    }
+  }
 </script>
 
 <style scoped></style>
