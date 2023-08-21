@@ -1,151 +1,113 @@
 <template>
   <v-form ref="form" class="d-flex flex-column align-center">
-    <h2 class="ma-3 align-center">Cadastro de talento</h2>
+    <h2 class="ma-3 text-center">Cadastro de talento</h2>
 
     <v-text-field
       label="Nome completo"
-      class="w-25 px-2"
-      type="text"
-      variant="outlined"
-      placeholder="Nome completo"
+      class="w-50 px-2"
       v-model="nome"
       :rules="[(v) => !!v || 'O nome é obrigatório!']"
       required
-    />
+    ></v-text-field>
 
     <v-text-field
       label="Email"
-      class="w-25 px-2"
+      class="w-50 px-2"
       type="email"
-      variant="outlined"
-      placeholder="Digite seu e-mail"
       v-model="email"
       :rules="[(v) => !!v || 'O e-mail é obrigatório!']"
       required
-    />
+    ></v-text-field>
 
     <v-text-field
       label="Data de nascimento"
-      class="w-25 px-2"
-      type="data"
-      variant="outlined"
-      placeholder="Digite sua data de nascimento"
+      class="w-50 px-2"
+      type="date"
       v-model="dataNascimento"
       :rules="[(v) => !!v || 'A data de nascimento é obrigatório!']"
       required
-    />
+    ></v-text-field>
 
     <v-text-field
       label="WhatsApp"
-      class="w-25 px-2"
+      class="w-50 px-2"
       type="tel"
-      variant="outlined"
-      placeholder="Digite seu WhatsApp"
       v-model="whatsapp"
       :rules="[(v) => !!v || 'O WhatsApp é obrigatório!']"
       required
-    />
+    ></v-text-field>
 
-    <label for="areaInteresse">Área de interesse</label>
-    <select name="areaInteresse" id="areaIntesse" v-model="areaInteresse">
-      <option id="areaIntesse" value="frontEnd">Front end</option>
-      <option id="areaIntesse" value="backEnd">Back end</option>
-      <option id="areaIntesse" value="fullstack">Full end</option>
-    </select>
-
-    <label for="nivelProfissional">Nível profissional</label>
-    <select
-      name="nivelProfissional"
-      id="nivelProfissional"
-      v-model="nivelProfissional"
-    >
-      <option id="nivelProfissional" value="trainee">Trainee</option>
-      <option id="nivelProfissional" value="junior">Junior</option>
-      <option id="nivelProfissional" value="pleno">Pleno</option>
-      <option id="nivelProfissional" value="senior">Senior</option>
-    </select>
-
-    <label for="habilidades">Suas habilidades</label>
-    <div class="row">
-      <div class="col-2 checkbox-container">
-        <input
-          type="checkbox"
-          name="habilidades"
-          value="html"
-          v-model="habilidades"
-        />
-        <label>HTML</label>
-      </div>
-
-      <div class="col-2 checkbox-container">
-        <input
-          type="checkbox"
-          name="habilidades"
-          v-model="habilidades"
-          value="css"
-        />
-        <label>CSS3</label>
-      </div>
-
-      <div class="col-2 checkbox-container">
-        <input
-          type="checkbox"
-          name="habilidades"
-          v-model="habilidades"
-          value="js"
-        />
-        <label>JavaScript</label>
-      </div>
-
-      <div class="col-2 checkbox-container">
-        <input
-          type="checkbox"
-          name="habilidades"
-          v-model="habilidades"
-          value="react"
-        />
-        <label>React</label>
-      </div>
-
-      <div class="col-2 checkbox-container">
-        <input
-          type="checkbox"
-          name="habilidades"
-          v-model="habilidades"
-          value="react-native"
-        />
-        <label>React Native</label>
-      </div>
-
-      <div class="col-2 checkbox-container">
-        <input
-          type="checkbox"
-          name="habilidades"
-          v-model="habilidades"
-          value="node"
-        />
-        <label>Node</label>
-      </div>
+    <!-- Área de Interesse -->
+    <div class="mb-3 w-50">
+      <label for="areaInteresse" class="form-label">Área de Interesse</label>
+      <select class="form-select" v-model="areaInteresse" id="areaInteresse">
+        <option value="frontEnd">Front end</option>
+        <option value="backEnd">Back end</option>
+        <option value="fullstack">Full stack</option>
+      </select>
     </div>
 
-    <textarea
-      name="cartaApresentacao"
-      id="cartaApresentacao"
-      cols="10"
-      rows="5"
-      placeholder="Digite aqui sua carta de apresentação"
+    <!-- Nível Profissional -->
+    <div class="mb-3 w-50">
+      <label for="nivelProfissional" class="form-label">Nível Profissional</label>
+      <select class="form-select" v-model="nivelProfissional" id="nivelProfissional">
+        <option value="trainee">Trainee</option>
+        <option value="junior">Junior</option>
+        <option value="pleno">Pleno</option>
+        <option value="senior">Senior</option>
+      </select>
+    </div>
+
+    <div class="d-flex flex-row">
+      <v-checkbox
+      v-model="habilidades"
+      value="html"
+      label="HTML"
+    ></v-checkbox>
+    <v-checkbox
+      v-model="habilidades"
+      value="css"
+      label="CSS3"
+    ></v-checkbox>
+    <v-checkbox
+      v-model="habilidades"
+      value="js"
+      label="JavaScript"
+    ></v-checkbox>
+    <v-checkbox
+      v-model="habilidades"
+      value="react"
+      label="React"
+    ></v-checkbox>
+    <v-checkbox
+      v-model="habilidades"
+      value="react-native"
+      label="React Native"
+    ></v-checkbox>
+    <v-checkbox
+      v-model="habilidades"
+      value="node"
+      label="Node"
+    ></v-checkbox>
+    </div>
+    
+
+    <v-textarea
+      label="Carta de apresentação"
       v-model="cartaApresentacao"
-    ></textarea>
+      cols="70"
+      rows="5"
+    ></v-textarea>
 
     <v-btn
       color="success"
       class="mt-1 me-2"
       size="large"
       @click="adicionarTalento"
-      >Cadastrar</v-btn
-    >
+    >Cadastrar</v-btn>
   </v-form>
 </template>
+
 
 <script>
 import { v4 as uuidv4 } from "uuid";
