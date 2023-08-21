@@ -4,10 +4,9 @@ import About from '../views/About.vue'
 import Home from '../views/Home.vue'
 import Cadastro from '../views/CadastroTalento.vue'
 
-const router = createRouter(
-    {
-        history: createWebHistory(import.meta.env.BASE_URL),
-        routes:[
+export const routes = createRouter({
+    history: createWebHistory(),
+    routes: [
             {
                 path: '/',
                 name: 'Home',
@@ -25,5 +24,3 @@ const router = createRouter(
             }
         ]
 })
-
-export default router

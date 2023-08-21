@@ -26,12 +26,11 @@
 
 <script>
 import cardTalent from "../components/cardTalent.vue"
-import CadastroTalento from "./CadastroTalento.vue";
+import axios from 'axios'
 
 export default{
   components:{
-    cardTalent,
-    CadastroTalento
+    cardTalent
   },
   data() {
     return {

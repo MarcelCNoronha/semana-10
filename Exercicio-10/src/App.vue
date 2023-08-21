@@ -1,14 +1,20 @@
 <template>
-  <div class="conteiner">
-    <Header />
-    <router-view />
-    <Footer />
-  </div>
+  <Header />
+  <router-view></router-view>
+  <Footer />
 </template>
 
-<script setup>
+<script>
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
+
+export default {
+  components: {
+    Header,
+    Footer,
+  },
+};
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
