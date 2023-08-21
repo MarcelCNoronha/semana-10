@@ -37,26 +37,25 @@
       required
     ></v-text-field>
 
-    <!-- Área de Interesse -->
     <div class="mb-3 w-50">
-      <label for="areaInteresse" class="form-label">Área de Interesse</label>
-      <select class="form-select" v-model="areaInteresse" id="areaInteresse">
-        <option value="frontEnd">Front end</option>
-        <option value="backEnd">Back end</option>
-        <option value="fullstack">Full stack</option>
-      </select>
+      <v-select 
+      label="Área de Interesse"
+      class="form-select"
+      v-model="areaInteresse"
+      :items="['Front end', 'Back end', 'Full stack']"
+      ></v-select>
     </div>
+ 
 
-    <!-- Nível Profissional -->
-    <div class="mb-3 w-50">
-      <label for="nivelProfissional" class="form-label">Nível Profissional</label>
-      <select class="form-select" v-model="nivelProfissional" id="nivelProfissional">
-        <option value="trainee">Trainee</option>
-        <option value="junior">Junior</option>
-        <option value="pleno">Pleno</option>
-        <option value="senior">Senior</option>
-      </select>
-    </div>
+      <div class="mb-3 w-50">
+      <v-select 
+      label="Nível Profissional"
+      class="form-select"
+      v-model="nivelProfissional"
+      :items="['Trainee', 'Junior', 'Pleno', 'Senior']"
+      > </v-select>
+      </div>
+     
 
     <div class="d-flex flex-row">
       <v-checkbox

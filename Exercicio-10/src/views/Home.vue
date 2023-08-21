@@ -1,12 +1,9 @@
 <template>
+<h2 class="ma-3 text-center">Banco de talentos</h2>
 
-<div class="container">
-  <div class="row">
-    <h2 class="col-6">
-      Banco de talentos
-    </h2>
-  </div>
+<div class="d-flex flex-column align-center ">
     <cardTalent
+    :style="{ width: '600px'}"
     v-for="talento in listaTalentos"
     :key="talento.id"
     :nome = "talento.nome"
